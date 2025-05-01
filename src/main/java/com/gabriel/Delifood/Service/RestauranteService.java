@@ -32,15 +32,4 @@ public class RestauranteService {
 
 	}
 
-	public Restaurante update(Restaurante obj) {
-		Optional<Restaurante> newObj = repository.findById(obj.getId());
-		updateRestaurante(newObj, obj);
-		return repository.save(newObj.get());
-	}
-
-	private void updateRestaurante(Optional<Restaurante> newObj, Restaurante obj) {
-		newObj.get().setNome(obj.getNome());
-
-	}
-
 }
